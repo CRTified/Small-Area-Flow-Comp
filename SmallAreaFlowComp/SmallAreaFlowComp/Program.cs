@@ -66,7 +66,7 @@ partial class Program
 
         // Get gcode file path from arguments and create temp gcode file
         string slicerGcodeFilePath = args[^1];
-        string tempGCodeFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tempScriptGCode.gcode");
+        string tempGCodeFilePath = System.IO.Path.GetTempFileName();
 
         // Assume initial tool position is at 0,0 (sould be updated before any extrusion moves anyway)
         Vector2 previousToolPos = new(0, 0);
