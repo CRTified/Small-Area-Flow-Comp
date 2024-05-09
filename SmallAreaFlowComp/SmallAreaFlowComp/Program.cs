@@ -188,7 +188,7 @@ class ErrorLogger
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error creating or writing to the log file: {ex.Message}");
+            Console.Error.WriteLine($"Error creating or writing to the log file: {ex.Message}");
         }
     }
 
@@ -201,7 +201,7 @@ class ErrorLogger
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error appending to the log file: {ex.Message}");
+	  Console.Error.WriteLine($"{DateTime.Now}: {msg}");
         }
     }
 }
